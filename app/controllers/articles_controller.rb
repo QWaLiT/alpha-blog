@@ -1,5 +1,9 @@
 class ArticlesController < ApplicationController
 
+	def index
+		@articles = Article.all
+	end
+
 	def new
 		@article = Article.new
 	end
@@ -20,7 +24,7 @@ class ArticlesController < ApplicationController
 
 	def update
 		@article = Article.find(params[:id])
-		if @article.update(article_params)
+		if @article.update(article_paramsgit )
 			flash[:notice] = "Article was successfully created"
 			redirect_to article_path(@article)
 		else
