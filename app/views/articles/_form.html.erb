@@ -1,15 +1,8 @@
 <!-- Dit is een 'partial' code die de data van 2 kwasi identieke code formulieren combineert zodat er geen herhalingen in de code zitten-->
 <!-- Dit wordt aangegeven met de underscore vooraan in de naam '_form...' -->
 
-<% if @article.errors.any? %>
-<h2>The following errors prevented the article from getting created</h2>
-<ul>
-	<% @article.errors.full_messages.each do |msg| %>
-	<li><%= msg %></li>
-	<% end %>
-</ul>
-<% end %>
 
+<%= render 'shared/errors', obj: @article %>
 
 <div class='row'>
 	<div class='col-xs-12'>
