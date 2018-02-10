@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
 
 	def create
 		@article = Article.new(article_params)
-		@article.user = User.first  # dit zorgt ervoor dat als een nieuw artikel wordt opgemaakt, deze toegewezen wordt aan de eerste gebruiker in de database
+		@article.user = current_user  # dit zorgt ervoor dat als een nieuw artikel wordt opgemaakt, deze toegewezen wordt aan de eerste gebruiker in de database
 
 		if @article.save
 			flash[:success] = "Article was successfully created"
